@@ -31,7 +31,7 @@ def fetch_filtered_catalog_docs(
         WHERE c.name = %s
     """
     docs: list[Document] = []
-    with get_raw_connection() as conn:
+    with get_raw_db_connection() as conn:
         with conn.cursor() as cur:
             cur.execute(query, (settings.RECOMMEND_COLLECTION,))
             for content, meta in cur.fetchall():

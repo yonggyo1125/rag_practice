@@ -46,5 +46,5 @@ class DBConnection(Protocol):
 
 def get_raw_db_connection() -> DBConnection:
     """증분 해시 조회 및 BM25 코퍼스 로드를 위한 DB 커넥션을 반환합니다."""
-    raw_dsn = settings.DATABASE_URL
+    raw_dsn = settings.DATABASE_URL.replace("postgresql+psycopg://", "postgresql://")
     return psycopg.connect(raw_dsn)
