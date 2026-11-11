@@ -9,7 +9,7 @@ from chatbot.schemas import (
     IndexDocumentRequest,
 )
 
-router = APIRouter(prefix="/v1/chatbot", tags=["[과제 1] 사내 규정 챗봇"])
+router = APIRouter(prefix="/v1/chatbot", tags=["[실습 1] 사내 규정 챗봇"])
 
 @router.post("/chunks/preview", response_model=APIResponse[dict])
 def preview_chunks_endpoint(req: ChunkPreviewRequest):

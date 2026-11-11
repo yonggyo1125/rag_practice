@@ -8,6 +8,7 @@ from shared.core.vector_store import get_vector_store
 
 from chatbot.router import router as chatbot_router
 from recommend.router import router as recommend_router
+from evaluation.router import router as evaluation_router
 
 logger = get_logger("app.main")
 
@@ -47,3 +48,4 @@ register_exception_handlers(app)
 # 라우터 등록
 app.include_router(chatbot_router)
 app.include_router(recommend_router)
+app.include_router(evaluation_router)
